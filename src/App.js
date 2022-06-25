@@ -1,7 +1,14 @@
-import './App.css';
-import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink, from } from '@apollo/client'
-import { onError } from '@apollo/client/link/error'
-import GetUsers from './components/GetUsers';
+import "./App.css";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  HttpLink,
+  from,
+} from "@apollo/client";
+import { onError } from "@apollo/client/link/error";
+// import GetUsers from './components/GetUsers';
+import Form from "./components/Form";
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
@@ -12,8 +19,8 @@ const errorLink = onError(({ graphqlErrors, networkError }) => {
 });
 const link = from([
   errorLink,
-  new HttpLink({uri: "http://localhost:8080/graphql"})
-])
+  new HttpLink({ uri: "http://localhost:8080/graphql" }),
+]);
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
@@ -23,7 +30,8 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-        <GetUsers />
+      {/* <GetUsers /> */}
+      <Form />
     </ApolloProvider>
   );
 }

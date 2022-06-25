@@ -1,6 +1,6 @@
 # React GraphQL Apollo
 
-Demo project for connecting a Node/GraphQL backend to a React frontend using GrapQL-Apollo
+Demo project for connecting a Node/GraphQL backend to a React frontend using GraphQL-Apollo
 
 ## Installation
 
